@@ -37,10 +37,6 @@
       </style>
    </head>
 
-     <!-- <script 
-      type="module"
-      src="js/guard.js">
-      </script> -->
 
       <!-- <script 
 type="module"
@@ -157,6 +153,121 @@ class="block p-4 rounded-2xl bg-[linear-gradient(145deg,var(--card),var(--card2)
          <!-- CONTENT -->
          <main class="  flex-1 p-4 xl:p-0">
             <header class="md:absolute md:top-0 md:left-0 md:w-full md:z-40 ">
+     
+               
+               <div class="relative">
+
+    <button
+        id="userMenuBtn"
+        class="
+        flex
+        items-center
+        gap-3
+        pl-2
+        pr-4
+        py-2
+        rounded-2xl
+        border
+        border-zinc-200
+        hover:bg-zinc-50
+        transition
+    ">
+
+        <img
+            src="https://i.imgur.com/Up2O503.jpeg"
+            class="
+            hidden
+            w-10
+            h-10
+            rounded-xl
+            object-cover">
+
+        <div class="text-left">
+
+            <div id="userMenuName" class="font-semibold text-sm">
+                Gennosuke
+            </div>
+
+            <div id="userMenuMail" class="text-xs text-zinc-500">
+                Elite User
+            </div> 
+
+        </div>
+
+    </button>
+
+      <button
+        id="logoutBtn"
+        class="
+        flex
+        items-center
+        gap-3
+        pl-2
+        pr-4
+        py-2
+        rounded-2xl
+        border
+        border-zinc-200
+        hover:bg-zinc-50
+        transition
+    ">
+ 
+
+        <div class="text-left">
+
+            
+
+            <div   class="text-sm text-zinc-500">
+               sair
+            </div>
+ 
+
+        </div>
+
+    </button>
+
+</div>
+  <!-- não Logado -->
+    <div class="hidden max-w-7xl mx-auto h-16 px-4 flex items-center justify-between">
+
+      
+
+     
+        <!-- Menu -->
+
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+
+            <a href="#">Torrents</a>
+            <a href="#">Categorias</a>
+            <a href="#">Ranking</a>
+            <a href="#">Regras</a>
+
+        </nav>
+
+        <!-- Auth -->
+
+        <div class="flex items-center gap-3">
+
+            <a
+                href="#"
+                class="h-10 px-4 rounded-xl border border-zinc-200 flex items-center">
+
+                Entrar
+
+            </a>
+
+            <a
+                href="#"
+                class="h-10 px-5 rounded-xl bg-[#5864be] text-white flex items-center">
+
+                Criar Conta
+
+            </a>
+
+        </div>
+
+    </div>
+ 
                <div class="flex items-center justify-between h-16 px-4">
                   <!-- Menu mobile -->
                   <button
@@ -1324,6 +1435,51 @@ class="block p-4 rounded-2xl bg-[linear-gradient(145deg,var(--card),var(--card2)
               
          }
       </script>
+
+
+
+     <script 
+      type="module"
+      src="js/guard.js">
+      </script
+       <script 
+      type="module"
+      src="services/sessionService.js">
+      </script>
+
+
+
+
+    <script type="module">
+        
+import { initSession, logout } from "/services/sessionService.js";
+
+initSession((user) => {
+
+    const userMenuBtn = document.getElementById("userMenuBtn");
+    const userMenuName = document.getElementById("userMenuName");
+    const logoutBtn = document.getElementById("logoutBtn");
+    const userMenuMail = document.getElementById("userMenuMail");
+
+    if (user) {
+console.log(user)
+      //   userMenuBtn.hidden = false;
+        userMenuName.textContent = user.name;
+        userMenuMail.textContent = user.email;
+
+      //   logoutBtn.onclick = async () => {
+      //       await logout();
+      //   };
+
+    } else {
+      console.lo("user",user)
+      //   userMenuBtn.hidden = true;
+    }
+
+});
+</script>
+
+
       <script src="https://unpkg.com/lucide@latest"></script>
       <script>
          lucide.createIcons();
