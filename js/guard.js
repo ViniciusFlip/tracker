@@ -14,7 +14,7 @@ onAuthStateChanged(auth, (user)=>{
 
     if(!user){
 
-        window.location.href =  "/auth"
+        window.location.href =  "/auth/"
         console.log(  "Usuário Negado:" )
         return
 

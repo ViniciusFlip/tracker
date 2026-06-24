@@ -1462,6 +1462,8 @@ initSession((user) => {
 
     if (user) {
 console.log(user)
+console.log(user.role)
+
       //   userMenuBtn.hidden = false;
         userMenuName.textContent = user.name;
         userMenuMail.textContent = user.email;
@@ -1471,7 +1473,7 @@ console.log(user)
         };
 
     } else {
-      console.lo("user",user)
+       
       //   userMenuBtn.hidden = true;
     }
 
